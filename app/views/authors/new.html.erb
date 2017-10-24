@@ -1,6 +1,4 @@
-<h1>Authors#new</h1>
-<p>Find me in app/views/authors/new.html.erb</p>
-
+<h1>Authors</h1>
 <%= form_for :author do |f| %>
   <p>
     <%= f.label :firstName, "First name" %><br>
@@ -10,9 +8,11 @@
     <%= f.label :last_name, "Last name" %><br>
     <%= f.text_field :last_name %>
   </p>
-
   <p>
     <%= f.label :homepage, "Homepage" %><br>
     <%= f.text_field :homepage %>
   </p>
+ <p>
+    <%= f.submit :submit %>
+  </p>
 <% end %>
