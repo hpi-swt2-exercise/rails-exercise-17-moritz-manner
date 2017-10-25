@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'authors/new'#, to: 'authors#new'
   get 'new_author', to: 'authors#new'
+  resources :authors
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
