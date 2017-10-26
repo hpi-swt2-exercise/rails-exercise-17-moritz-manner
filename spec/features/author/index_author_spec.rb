@@ -12,4 +12,9 @@ describe "author index page", type: :feature do
    visit authors_path
    expect(page).to have_css('td', :text => 'http://wikipedia.org/Alan_Turing')
   end
+
+  it "should have a button for adding new authors" do
+    visit authors_path
+    expect(page).to have_css('a', :text => 'Add author')
+  end
 end
