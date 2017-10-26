@@ -1,14 +1,14 @@
-<h1>Listing articles</h1>
+<h1>Listing authors</h1>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>Name</th>
+    <!-- <th>Text</th> -->
   </tr>
   <% @authors.each do |author| %>
   <tr>
-    <td><%= author.first_name %></td>
-    <td><%= author.last_name %></td>
-    <td><%= author.homepage %></td>
+    <td><%= author.name %></td>
+    <!-- <td><%= author.last_name %></td>
+    <td><%= author.homepage %></td> -->
   </tr>
   <% end %>
 </table>
