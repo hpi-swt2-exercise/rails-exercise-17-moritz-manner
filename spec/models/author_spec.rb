@@ -13,4 +13,9 @@ RSpec.describe Author, type: :model do
     expect(author.last_name).to eq('Turing')
     expect(author.name).to eq('Alan Turing')
   end
+  it "should only allow to save author with last name" do
+    author = Author.new
+    author.last_name = ''
+    expect(author).not_to be_valid
+  end
 end
