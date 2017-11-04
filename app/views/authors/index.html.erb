@@ -5,6 +5,7 @@
     <th>Last Name</th>
     <th>Homepage</th>
     <th>Link to author</th>
+    <th>Link to edit</th>
   </tr>
   <% @authors.each do |author| %>
   <tr>
@@ -12,6 +13,7 @@
     <td><%= author.last_name %></td>
     <td><%= author.homepage %></td>
     <td><%= link_to 'Show', author_path(author) %></td>
+    <td><%= link_to 'Edit', edit_author_path(author)%></td>
   </tr>
   <% end %>
 </table>
