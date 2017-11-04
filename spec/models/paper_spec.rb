@@ -9,8 +9,13 @@ RSpec.describe Paper, type: :model do
   end
 
   it "must have a title" do
-    paper = Paper.new
+    paper = Paper.new(title: 'COMPUTING MACHINERY AND INTELLIGENCE', venue: 'Mind 49: 433-460', year: 1950)
     paper.title = ''
+    expect(paper).to_not be_valid
+  end
+  it "must have a venue" do
+    paper = Paper.new(title: 'COMPUTING MACHINERY AND INTELLIGENCE', venue: 'Mind 49: 433-460', year: 1950)
+    paper.venue = ''
     expect(paper).to_not be_valid
   end
 end
