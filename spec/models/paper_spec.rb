@@ -18,4 +18,9 @@ RSpec.describe Paper, type: :model do
     paper.venue = ''
     expect(paper).to_not be_valid
   end
+  it "must have a year" do
+    paper = Paper.new(title: 'COMPUTING MACHINERY AND INTELLIGENCE', venue: 'Mind 49: 433-460', year: 1950)
+    paper.year = ''
+    expect(paper).to_not be_valid
+  end
 end
