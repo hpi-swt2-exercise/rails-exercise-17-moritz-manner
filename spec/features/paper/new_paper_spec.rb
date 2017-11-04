@@ -12,4 +12,9 @@ describe 'New Paper page', type: :feature  do
     expect(page).to have_field('Venue')
     expect(page).to have_field('Year')
   end
+
+  it "should have submit button" do
+    visit new_paper_path
+    expect(page).to have_css('input[type="submit"]')
+  end
 end
