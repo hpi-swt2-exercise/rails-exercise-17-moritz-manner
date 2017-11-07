@@ -5,4 +5,14 @@ describe 'Paper index page', type: :feature do
     author = FactoryGirl.create :paper
     visit papers_path
   end
+
+  it "should display title, venue and year of all papers" do
+    paper = FactoryGirl.create :paper
+    paper.save
+    visit papers_path
+    expect(page).to have_css('td', :text => 'COMPUTING MACHINERY AND INTELLIGENCE')
+    expect(page).to have_css('td', :text => 'Mind 49: 433-460')
+    expect(page).to have_css('td', :text => 1950)
+
+  end
 end
