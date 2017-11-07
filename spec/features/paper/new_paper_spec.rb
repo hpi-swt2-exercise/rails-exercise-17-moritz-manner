@@ -25,4 +25,12 @@ describe 'New Paper page', type: :feature  do
     fill_in "paper_year", :with => '1950'
     find('input[type="submit"]').click
   end
+
+  it "should display info when title is missing" do
+    visit new_paper_path
+    fill_in "paper_venue", :with => 'Mind 49: 433-460'
+    fill_in "paper_year", :with => '1950'
+    find('input[type="submit"]').click
+    expect(page).to have_content("Title can't be blank")
+  end
 end
