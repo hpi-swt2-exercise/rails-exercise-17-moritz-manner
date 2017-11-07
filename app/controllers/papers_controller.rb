@@ -1,9 +1,16 @@
 class PapersController < ApplicationController
+  def index
+    @papers = Paper.all
+  end
+
   def show
     @paper = Paper.find(params[:id])
   end
 
   def new
+  end
+
+  def edit
   end
 
   def create
@@ -13,7 +20,6 @@ class PapersController < ApplicationController
     else
       render 'new'
     end
-
   end
 
   private
