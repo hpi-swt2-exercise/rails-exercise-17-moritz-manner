@@ -21,4 +21,14 @@ describe 'Paper index page', type: :feature do
     visit papers_path
     expect(page).to have_css('a', :text => 'Show')
   end
+  it "should have a link to the paper edit page" do
+    paper = FactoryGirl.create :paper
+    visit papers_path
+    expect(page).to have_css('a', :text => 'Edit')
+  end
+  it "should have a link to destroy an paper" do
+    paper = FactoryGirl.create :paper
+    visit papers_path
+    expect(page).to have_css('a', :text => 'Destroy')
+  end
 end
