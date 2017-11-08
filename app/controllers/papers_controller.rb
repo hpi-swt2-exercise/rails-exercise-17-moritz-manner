@@ -12,6 +12,7 @@ class PapersController < ApplicationController
   end
 
   def edit
+    @paper = Paper.find(params[:id])
   end
 
   def create
