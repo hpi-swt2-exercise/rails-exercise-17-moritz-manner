@@ -31,4 +31,13 @@ describe 'Paper index page', type: :feature do
     visit papers_path
     expect(page).to have_css('a', :text => 'Destroy')
   end
+  it 'should not show the paper published in 1968' do
+    paper1950 = FactoryGirl.create :paper
+   	paper1968 = FactoryGirl.create :paper, year: 1968, title: "great title", venue: 'boring venue'
+
+   	visit papers_path + '?year=1950'
+
+   	expect(page).to have_text(paper1950.title)
+   	expect(page).not_to have_text(paper1968.title)
+  end
 end
