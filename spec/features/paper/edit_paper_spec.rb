@@ -16,4 +16,10 @@ describe "Edit paper page", type: :feature do
     paper.reload
     expect(paper.venue).to eq('Mind 49')
   end
+
+  it "should have a select box for the first author" do
+    paper = FactoryGirl.create :paper
+    visit edit_paper_path(paper)
+    expect(page).to have_select('paper_author_id_1', selected: paper.authors.first.name)
+  end
 end
