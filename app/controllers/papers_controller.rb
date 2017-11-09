@@ -1,6 +1,10 @@
 class PapersController < ApplicationController
   def index
-    @papers = Paper.all
+    unless params[:year].blank?
+      @papers = Paper.published_in(params[:year])
+    else
+      @papers = Paper.all
+    end
   end
 
   def show
